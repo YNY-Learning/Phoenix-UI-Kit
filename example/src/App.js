@@ -1,12 +1,13 @@
 import React, { Component } from 'react'
 
-import ExampleComponent from 'phoenix-ui-kit'
+import { Header } from 'phoenix-ui-kit'
 
 export default class App extends Component {
-  render () {
+  render() {
     return (
       <div>
-        <ExampleComponent text='Modern React component module' />
+        <Header />
+        {/* <ExampleComponent text='Modern React component module' /> */}
       </div>
     )
   }
