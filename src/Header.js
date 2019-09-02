@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 
 class Header extends Component {
   render() {
-    return <h1>header</h1>
+    return <h1 style={{color: 'red'}} >header</h1>
   }
 }
 
