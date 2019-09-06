@@ -1,0 +1,8 @@
+{
+  "short_name": "phoenix-ui-kit",
+  "name": "phoenix-ui-kit",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#ffffff"
+}
