@@ -1,9 +1,37 @@
 /* add css styles here (optional) */
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,600&display=swap");
 
-.test {
-  display: inline-block;
-  margin: 2em auto;
-  border: 2px solid #000;
-  font-size: 2em;
-  color: blue;
+body {
+  font-family: "Open Sans", SansSerif;
+}
+
+.mega {
+  font-size: 24px;
+  line-height: 36px;
+}
+.jumbo {
+  font-size: 20px;
+  line-height: 30px;
+}
+.headline {
+  font-size: 18px;
+  line-height: 27px;
+}
+.title {
+  font-size: 16px;
+  line-height: 24px;
+}
+.body {
+  font-size: 14px;
+  line-height: 21px;
+}
+.caption {
+  font-size: 12px;
+  line-height: 18px;
+}
+.-regular {
+  font-weight: 400;
+}
+.-semibold {
+  font-weight: 600;
 }

@@ -1,0 +1,6 @@
+export { default as Mega } from './Mega'
+export { default as Jumbo } from './Jumbo'
+export { default as Headline } from './Headline'
+export { default as Title } from './Title'
+export { default as Body } from './Body'
+export { default as Caption } from './Caption'
