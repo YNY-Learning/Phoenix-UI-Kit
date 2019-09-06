@@ -1,6 +1,12 @@
-import React from 'react'
+import React from "react";
 
-import { storiesOf } from '@storybook/react'
-import { Header } from 'phoenix-ui-kit'
+import { storiesOf } from "@storybook/react";
+import { withKnobs, text, boolean, number } from "@storybook/addon-knobs";
+import { Header } from "phoenix-ui-kit";
+const stories = storiesOf("Phoenix Design", module);
+stories.addDecorator(withKnobs);
 
-storiesOf('Header', module).add('to Storybook', () => <Header />)
+stories.add("Header", () => {
+  const name = text('text', 'Header Test');
+return <Header text={name} />
+});
