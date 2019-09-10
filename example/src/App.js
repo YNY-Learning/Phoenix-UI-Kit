@@ -8,6 +8,7 @@ import {
   Body,
   Caption,
   Button,
+  Tabs,
   Bell,
 } from 'phoenix-ui-kit';
 
@@ -30,17 +31,66 @@ export default class App extends Component {
         <Body weight="semibold">Body</Body>
         <Caption weight="semibold">Caption</Caption>
         <hr />
-        <Button primary>Primary</Button>
-        <Button
-          primary
-          withIcon
-          buttonIcon={<Bell color="#FFF" width="12px" height="12px" />}
-        >
-          Action
-        </Button>
-        <Button secondary>Secondary</Button>
-        <Button tertiary>Tertiary</Button>
-        <Button small>Hello</Button>
+        <div className="hlist">
+          <Button primary>Primary</Button>
+          <Button secondary>Secondary</Button>
+          <Button tertiary>Tertiary</Button>
+        </div>
+        <div className="hlist">
+          <Button
+            primary
+            withIcon
+            buttonIcon={<Bell color="#FFF" width="12px" height="12px" />}
+          >
+            Action
+          </Button>
+          <Button
+            secondary
+            withIcon
+            buttonIcon={<Bell color="#C1C1C1" width="12px" height="12px" />}
+          >
+            Action
+          </Button>
+          <Button
+            tertiary
+            withIcon
+            buttonIcon={<Bell color="#C1C1C1" width="12px" height="12px" />}
+          >
+            Action
+          </Button>
+        </div>
+
+        <div className="hlist">
+          <Button primary disabled>
+            Primary
+          </Button>
+          <Button secondary disabled>
+            Secondary
+          </Button>
+          <Button tertiary disabled>
+            Tertiary
+          </Button>
+        </div>
+        <div className="hlist">
+          <Button primary small>
+            Primary
+          </Button>
+          <Button secondary small>
+            Secondary
+          </Button>
+          <Button tertiary small>
+            Tertiary
+          </Button>
+        </div>
+        <Tabs
+          tabList={[
+            { label: 'tab1', tabComponent: <h1>tab1 content</h1> },
+            { label: 'tab2', tabComponent: <p>tab2 content</p> },
+            { label: 'tab3', tabComponent: <Button primary small>
+                Primary
+              </Button> },
+          ]}
+        />
       </div>
     );
   }

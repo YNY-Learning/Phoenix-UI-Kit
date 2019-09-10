@@ -8,8 +8,8 @@ const ButtonStyled = styled(({ className, children }) => (
 ))`
   font-size: 14px;
   font-weight: 400;
-  line-height: 21px;
   border-radius: 4px;
+  line-height: 21px;
   position: relative;
   display: flex;
   flex-flow: row nowrap;
@@ -24,6 +24,21 @@ const ButtonStyled = styled(({ className, children }) => (
         background: ${props => props.theme.primary1};
         box-shadow: 0px 2px 10px 0px rgba(0, 0, 0, 0.1);
         border: none;
+        ${({ disabled }) =>
+    disabled
+      ? css`
+                background: ${props => props.theme.grey3};
+                color: ${props => props.theme.white};
+                cursor: not-allowed;
+              `
+      : css`
+                &:hover {
+                  background: ${props => props.theme.primary4};
+                }
+                &:focus {
+                  background: ${props => props.theme.primary5};
+                }
+              `}
       `
     }
     if (props.secondary) {
@@ -32,6 +47,21 @@ const ButtonStyled = styled(({ className, children }) => (
         background: ${props => props.theme.white};
         box-shadow: 0px 2px 10px 0px rgba(0, 0, 0, 0.1);
         border: 1px solid ${props => props.theme.grey2};
+        ${({ disabled }) =>
+    disabled
+      ? css`
+                background: ${props => props.theme.grey2};
+                color: ${props => props.theme.grey3};
+                cursor: not-allowed;
+              `
+      : css`
+                &:hover {
+                  background: ${props => props.theme.grey1};
+                }
+                &:focus {
+                  background: ${props => props.theme.grey2};
+                }
+              `}
       `
     }
     if (props.tertiary) {
@@ -40,6 +70,21 @@ const ButtonStyled = styled(({ className, children }) => (
         background: transparent;
         box-shadow: none;
         border: none;
+        ${({ disabled }) =>
+    disabled
+      ? css`
+                background: ${props => props.theme.white};
+                color: ${props => props.theme.grey3};
+                cursor: not-allowed;
+              `
+      : css`
+                &:hover {
+                  background: ${props => props.theme.grey1};
+                }
+                &:focus {
+                  background: ${props => props.theme.grey2};
+                }
+              `}
       `
     } else {
       return css`
@@ -50,12 +95,14 @@ const ButtonStyled = styled(({ className, children }) => (
       `
     }
   }}
-
   ${({ small }) =>
     small
-      ? `padding: 4px 16px
-  `
-      : `padding: 8px 16px`}
+      ? css`
+          padding: 4px 16px;
+        `
+      : css`
+          padding: 8px 16px;
+        `}
 `
 ButtonStyled.defaultProps = {
   theme: Theme
@@ -76,11 +123,7 @@ const TextContainer = styled.div`
 `
 
 function Button(props) {
-  console.log(props.buttonIcon)
   if (props.withIcon) {
-    console.log(typeof props.children)
-    console.log(props.children)
-
     return (
       <ButtonStyled {...props}>
         {' '}
