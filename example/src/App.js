@@ -10,6 +10,7 @@ import {
   Button,
   Tabs,
   Bell,
+  CheckBox,
 } from 'phoenix-ui-kit';
 
 export default class App extends Component {
@@ -86,11 +87,42 @@ export default class App extends Component {
           tabList={[
             { label: 'tab1', tabComponent: <h1>tab1 content</h1> },
             { label: 'tab2', tabComponent: <p>tab2 content</p> },
-            { label: 'tab3', tabComponent: <Button primary small>
-                Primary
-              </Button> },
+            {
+              label: 'tab3',
+              tabComponent: (
+                <Button primary small>
+                  Primary
+                </Button>
+              ),
+            },
           ]}
         />
+        <div className="hlist">
+          <CheckBox
+            label="default"
+            name="default"
+            onChange={e => console.log(e.target.name, e.target.value)}
+          />
+          <CheckBox
+            label="checked"
+            selected
+            name="checked"
+            onChange={e => console.log(e.target.name, e.target.value)}
+          />
+          <CheckBox
+            label="disabled"
+            disabled
+            name="disabled"
+            onChange={e => console.log(e)}
+          />
+          <CheckBox
+            label=" selected and disabled"
+            disabled
+            selected
+            name="selected and disabled"
+            onChange={e => console.log(e)}
+          />
+        </div>
       </div>
     );
   }
