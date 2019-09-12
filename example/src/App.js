@@ -10,10 +10,27 @@ import {
   Button,
   Tabs,
   Bell,
+  InformationFill,
   CheckBox,
+  Radio,
+  ToolTip,
 } from 'phoenix-ui-kit';
+import 'phoenix-ui-kit/dist/index.min.css'
 
 export default class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      checked: false,
+    };
+    this.onCheckToggle = this.onCheckToggle.bind(this);
+  }
+  onCheckToggle(e) {
+    this.setState({
+      checked: !this.state.checked,
+    });
+  }
+
   render() {
     // console.log(YNYTheme)
     return (
@@ -33,11 +50,13 @@ export default class App extends Component {
         <Caption weight="semibold">Caption</Caption>
         <hr />
         <div className="hlist">
+          <h4>Default</h4>
           <Button primary>Primary</Button>
           <Button secondary>Secondary</Button>
           <Button tertiary>Tertiary</Button>
         </div>
         <div className="hlist">
+          <h4>with Icon</h4>
           <Button
             primary
             withIcon
@@ -62,6 +81,7 @@ export default class App extends Component {
         </div>
 
         <div className="hlist">
+          <h4>Disabled</h4>
           <Button primary disabled>
             Primary
           </Button>
@@ -73,6 +93,7 @@ export default class App extends Component {
           </Button>
         </div>
         <div className="hlist">
+          <h4>Small</h4>
           <Button primary small>
             Primary
           </Button>
@@ -101,26 +122,70 @@ export default class App extends Component {
           <CheckBox
             label="default"
             name="default"
-            onChange={e => console.log(e.target.name, e.target.value)}
+            selected={this.state.checked}
+            onChange={this.onCheckToggle}
           />
           <CheckBox
             label="checked"
-            selected
+            selected={this.state.checked}
             name="checked"
-            onChange={e => console.log(e.target.name, e.target.value)}
+            onChange={this.onCheckToggle}
           />
           <CheckBox
             label="disabled"
             disabled
+            selected={this.state.checked}
             name="disabled"
-            onChange={e => console.log(e)}
+            onChange={this.onCheckToggle}
           />
           <CheckBox
             label=" selected and disabled"
             disabled
-            selected
+            selected={this.state.checked}
             name="selected and disabled"
-            onChange={e => console.log(e)}
+            onChange={this.onCheckToggle}
+          />
+        </div>
+        <div className="hlist">
+          <ToolTip label="tooltip" placement="bottom">
+            <InformationFill />
+          </ToolTip>
+          <ToolTip label="tooltip" placement="top">
+            <InformationFill />
+          </ToolTip>
+          <ToolTip label="tooltip" placement="left">
+            <InformationFill />
+          </ToolTip>
+          <ToolTip label="tooltip" placement="right">
+            <InformationFill />
+          </ToolTip>
+        </div>
+        <div className="hlist">
+          <Radio
+            label="default"
+            name="default"
+            selected={this.state.checked}
+            onChange={this.onCheckToggle}
+          />
+          <Radio
+            label="checked"
+            selected={this.state.checked}
+            name="checked"
+            onChange={this.onCheckToggle}
+          />
+          <Radio
+            label="disabled"
+            disabled
+            selected={this.state.checked}
+            name="disabled"
+            onChange={this.onCheckToggle}
+          />
+          <Radio
+            label=" selected and disabled"
+            disabled
+            selected={this.state.checked}
+            name="selected and disabled"
+            onChange={this.onCheckToggle}
           />
         </div>
       </div>
