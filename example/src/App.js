@@ -14,8 +14,10 @@ import {
   CheckBox,
   Radio,
   ToolTip,
+  Label,
+  SquareRating,
 } from 'phoenix-ui-kit';
-import 'phoenix-ui-kit/dist/index.min.css'
+import 'phoenix-ui-kit/dist/index.min.css';
 
 export default class App extends Component {
   constructor(props) {
@@ -187,6 +189,20 @@ export default class App extends Component {
             name="selected and disabled"
             onChange={this.onCheckToggle}
           />
+        </div>
+        <div className="hlist">
+          <Label state="success">success</Label>
+          <Label state="error">error</Label>
+          <Label state="warning">warning</Label>
+          <Label state="info">information</Label>
+        </div>
+        <div className="vlist">
+          <SquareRating levels={['A1','A2','B1','B2','C1','C2']} ranking={0}/>
+          <SquareRating levels={['A1','A2','B1','B2','C1','C2']} ranking={1}/>
+          <SquareRating levels={['A1','A2','B1','B2','C1','C2']} ranking={2}/>
+          <SquareRating levels={['A1','A2','B1','B2','C1','C2']} ranking={3}/>
+          <SquareRating levels={['A1','A2','B1','B2','C1','C2']} ranking={4}/>
+          <SquareRating levels={['A1','A2','B1','B2','C1','C2']} ranking={5}/>
         </div>
       </div>
     );

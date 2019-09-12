@@ -26,13 +26,12 @@ const ToolTip = props => {
   return (
     <Tooltip
       placement={props.placement}
-      trigger={[]}
+      trigger={['hover']}
       overlay={<OverlayTooltip>{props.label}</OverlayTooltip>}
       arrowContent={<div style={{ display: 'none' }} />}
       destroyTooltipOnHide
       transitionName='rc-tooltip-zoom'
-      mouseEnterDelay={0.3}
-      defaultVisible={true}
+      mouseEnterDelay={0.35}
     >
       <ToolTipChildren>{props.children}</ToolTipChildren>
     </Tooltip>
