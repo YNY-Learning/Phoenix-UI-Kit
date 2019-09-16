@@ -17,6 +17,8 @@ import {
   Label,
   SquareRating,
   StarRating,
+  Avatar,
+  BreadCrumbs,
 } from 'phoenix-ui-kit';
 import 'phoenix-ui-kit/dist/index.min.css';
 
@@ -260,6 +262,40 @@ export default class App extends Component {
               name="stars"
               value={5}
               onChange={e => console.log(e)}
+            />
+          </div>
+        </div>
+        <div className="hlist">
+          <Avatar
+            src="https://images.unsplash.com/photo-1522075469751-3a6694fb2f61"
+            alt="avatar photo"
+            small
+          />
+          <Avatar
+            src="https://images.unsplash.com/photo-1522075469751-3a6694fb2f61"
+            alt="avatar photo"
+            square
+            small
+          />
+          <Avatar
+            src="https://images.unsplash.com/photo-1522075469751-3a6694fb2f61"
+            alt="avatar photo"
+            large
+          />
+          <Avatar
+            src="https://images.unsplash.com/photo-1522075469751-3a6694fb2f61"
+            alt="avatar photo"
+            square
+            large
+          />
+        </div>
+        <div className="hlist">
+          <div className="vlist">
+            <BreadCrumbs routes={['Dashboard']} />
+            <BreadCrumbs routes={['Dashboard', 'Level 2']} />
+            <BreadCrumbs routes={['Dashboard', 'Level 2', 'Level 3']} />
+            <BreadCrumbs
+              routes={['Dashboard', 'Level 2', 'Level 3', 'Level 4']}
             />
           </div>
         </div>
