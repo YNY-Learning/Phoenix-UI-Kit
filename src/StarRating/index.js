@@ -49,7 +49,7 @@ const StarRatingContainer = styled.div`
   flex-flow: row nowrap;
   justify-content: flex-start;
   align-items: center;
-  width: 82px;
+  width: auto;
   height: 12px;
   margin: 8px 0px;
 `
@@ -59,6 +59,10 @@ const LevelContainer = styled.div`
   font-weight: 400;
   color: ${props => props.theme.black};
   margin-left: 22px;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-start;
+  align-items: center;
 `
 LevelContainer.defaultProps = {
   theme: Theme

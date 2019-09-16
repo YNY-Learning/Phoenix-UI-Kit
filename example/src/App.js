@@ -152,20 +152,6 @@ export default class App extends Component {
           />
         </div>
         <div className="hlist">
-          <ToolTip label="tooltip" placement="bottom">
-            <InformationFill />
-          </ToolTip>
-          <ToolTip label="tooltip" placement="top">
-            <InformationFill />
-          </ToolTip>
-          <ToolTip label="tooltip" placement="left">
-            <InformationFill />
-          </ToolTip>
-          <ToolTip label="tooltip" placement="right">
-            <InformationFill />
-          </ToolTip>
-        </div>
-        <div className="hlist">
           <Radio
             label="default"
             name="default"
@@ -192,6 +178,20 @@ export default class App extends Component {
             name="selected and disabled"
             onChange={this.onCheckToggle}
           />
+        </div>
+        <div className="hlist">
+          <ToolTip label="tooltip" placement="bottom">
+            <InformationFill />
+          </ToolTip>
+          <ToolTip label="tooltip" placement="top">
+            <InformationFill />
+          </ToolTip>
+          <ToolTip label="tooltip" placement="left">
+            <InformationFill />
+          </ToolTip>
+          <ToolTip label="tooltip" placement="right">
+            <InformationFill />
+          </ToolTip>
         </div>
         <div className="hlist">
           <Label state="success">success</Label>
@@ -228,41 +228,35 @@ export default class App extends Component {
           </div>
           <div className="vlist">
             <StarRating
-              options={['A1', 'A2', 'B1', 'B2', 'C1', 'C2']}
+              options={['Nah', 'Could improve', 'Okay', 'Good!', 'Awesome!']}
               name="stars"
               value={0}
               onChange={e => console.log(e)}
             />
             <StarRating
-              options={['A1', 'A2', 'B1', 'B2', 'C1', 'C2']}
+              options={['Nah', 'Could improve', 'Okay', 'Good!', 'Awesome!']}
               name="stars"
               value={1}
               onChange={e => console.log(e)}
             />
             <StarRating
-              options={['A1', 'A2', 'B1', 'B2', 'C1', 'C2']}
+              options={['Nah', 'Could improve', 'Okay', 'Good!', 'Awesome!']}
               name="stars"
               value={2}
               onChange={e => console.log(e)}
             />
             <StarRating
-              options={['A1', 'A2', 'B1', 'B2', 'C1', 'C2']}
+              options={['Nah', 'Could improve', 'Okay', 'Good!', 'Awesome!']}
               name="stars"
               value={3}
               onChange={e => console.log(e)}
             />
             <StarRating
-              options={['A1', 'A2', 'B1', 'B2', 'C1', 'C2']}
+              options={['Nah', 'Could improve', 'Okay', 'Good!', 'Awesome!']}
               name="stars"
               value={4}
               onChange={e => console.log(e)}
             />
-            <StarRating
-              options={['A1', 'A2', 'B1', 'B2', 'C1', 'C2']}
-              name="stars"
-              value={5}
-              onChange={e => console.log(e)}
-            />
           </div>
         </div>
         <div className="hlist">
@@ -289,15 +283,13 @@ export default class App extends Component {
             large
           />
         </div>
-        <div className="hlist">
-          <div className="vlist">
-            <BreadCrumbs routes={['Dashboard']} />
-            <BreadCrumbs routes={['Dashboard', 'Level 2']} />
-            <BreadCrumbs routes={['Dashboard', 'Level 2', 'Level 3']} />
-            <BreadCrumbs
-              routes={['Dashboard', 'Level 2', 'Level 3', 'Level 4']}
-            />
-          </div>
+        <div className="vlist">
+          <BreadCrumbs routes={['Dashboard']} />
+          <BreadCrumbs routes={['Dashboard', 'Level 2']} />
+          <BreadCrumbs routes={['Dashboard', 'Level 2', 'Level 3']} />
+          <BreadCrumbs
+            routes={['Dashboard', 'Level 2', 'Level 3', 'Level 4']}
+          />
         </div>
       </div>
     );
