@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import styled, { css } from 'styled-components'
+import styled from 'styled-components'
 import Theme from '../Theme'
 
 const Square = styled.div`
@@ -46,7 +46,6 @@ const SquareRating = props => {
   return (
     <SquareRatingContainer>
       {props.levels.map((level, index) => {
-        console.log(index === props.ranking)
         return <Square key={index} active={index <= props.ranking} />
       })}
       <LevelContainer> {props.levels[props.ranking]} </LevelContainer>

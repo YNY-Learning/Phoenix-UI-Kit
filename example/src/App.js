@@ -16,6 +16,7 @@ import {
   ToolTip,
   Label,
   SquareRating,
+  StarRating,
 } from 'phoenix-ui-kit';
 import 'phoenix-ui-kit/dist/index.min.css';
 
@@ -196,13 +197,71 @@ export default class App extends Component {
           <Label state="warning">warning</Label>
           <Label state="info">information</Label>
         </div>
-        <div className="vlist">
-          <SquareRating levels={['A1','A2','B1','B2','C1','C2']} ranking={0}/>
-          <SquareRating levels={['A1','A2','B1','B2','C1','C2']} ranking={1}/>
-          <SquareRating levels={['A1','A2','B1','B2','C1','C2']} ranking={2}/>
-          <SquareRating levels={['A1','A2','B1','B2','C1','C2']} ranking={3}/>
-          <SquareRating levels={['A1','A2','B1','B2','C1','C2']} ranking={4}/>
-          <SquareRating levels={['A1','A2','B1','B2','C1','C2']} ranking={5}/>
+        <div className="hlist">
+          <div className="vlist">
+            <SquareRating
+              levels={['A1', 'A2', 'B1', 'B2', 'C1', 'C2']}
+              ranking={0}
+            />
+            <SquareRating
+              levels={['A1', 'A2', 'B1', 'B2', 'C1', 'C2']}
+              ranking={1}
+            />
+            <SquareRating
+              levels={['A1', 'A2', 'B1', 'B2', 'C1', 'C2']}
+              ranking={2}
+            />
+            <SquareRating
+              levels={['A1', 'A2', 'B1', 'B2', 'C1', 'C2']}
+              ranking={3}
+            />
+            <SquareRating
+              levels={['A1', 'A2', 'B1', 'B2', 'C1', 'C2']}
+              ranking={4}
+            />
+            <SquareRating
+              levels={['A1', 'A2', 'B1', 'B2', 'C1', 'C2']}
+              ranking={5}
+            />
+          </div>
+          <div className="vlist">
+            <StarRating
+              options={['A1', 'A2', 'B1', 'B2', 'C1', 'C2']}
+              name="stars"
+              value={0}
+              onChange={e => console.log(e)}
+            />
+            <StarRating
+              options={['A1', 'A2', 'B1', 'B2', 'C1', 'C2']}
+              name="stars"
+              value={1}
+              onChange={e => console.log(e)}
+            />
+            <StarRating
+              options={['A1', 'A2', 'B1', 'B2', 'C1', 'C2']}
+              name="stars"
+              value={2}
+              onChange={e => console.log(e)}
+            />
+            <StarRating
+              options={['A1', 'A2', 'B1', 'B2', 'C1', 'C2']}
+              name="stars"
+              value={3}
+              onChange={e => console.log(e)}
+            />
+            <StarRating
+              options={['A1', 'A2', 'B1', 'B2', 'C1', 'C2']}
+              name="stars"
+              value={4}
+              onChange={e => console.log(e)}
+            />
+            <StarRating
+              options={['A1', 'A2', 'B1', 'B2', 'C1', 'C2']}
+              name="stars"
+              value={5}
+              onChange={e => console.log(e)}
+            />
+          </div>
         </div>
       </div>
     );
