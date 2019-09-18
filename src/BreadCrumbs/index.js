@@ -1,8 +1,8 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import styled from 'styled-components';
-import Theme from '../Theme';
-import NextChevron from '../Icons/NextChevron';
+import React from 'react'
+import PropTypes from 'prop-types'
+import styled from 'styled-components'
+import Theme from '../Theme'
+import NextChevron from '../Icons/NextChevron'
 
 const BreadCrumbsContainer = styled(({ className, children }) => (
   <div className={className}> {children} </div>
@@ -11,24 +11,24 @@ const BreadCrumbsContainer = styled(({ className, children }) => (
   flex-flow: column nowrap;
   justify-content: flex-start;
   align-items: flex-start;
-`;
+`
 const RoutesContainer = styled.div`
   display: flex;
   flex-flow: row nowrap;
   justify-content: flex-start;
   align-items: center;
-`;
+`
 const RouteTitle = styled.h1`
   font-size: 14px;
   font-weight: 600;
   line-height: 21px;
   color: ${props => props.theme.black};
   margin: 8px 0px;
-`;
+`
 
 RouteTitle.defaultProps = {
-  theme: Theme,
-};
+  theme: Theme
+}
 const RouteArrow = styled.div`
   width: auto;
   display: flex;
@@ -36,16 +36,16 @@ const RouteArrow = styled.div`
   justify-content: center;
   align-items: center;
   margin: 0px 8px;
-`;
+`
 const Route = styled.h1`
   font-size: 12px;
   font-weight: ${props => (props.active ? 600 : 400)};
   line-height: 18px;
   color: ${props => (props.active ? props.theme.black : props.theme.grey3)};
-`;
+`
 Route.defaultProps = {
-  theme: Theme,
-};
+  theme: Theme
+}
 const BreadCrumbs = props => {
   return (
     <BreadCrumbsContainer className={props.className}>
@@ -57,8 +57,8 @@ const BreadCrumbs = props => {
               <React.Fragment key={index}>
                 <RouteArrow>
                   <NextChevron
-                    width="4px"
-                    height="8px"
+                    width='4px'
+                    height='8px'
                     color={
                       index === props.routes.length - 1 ? '#000' : '#9296B3'
                     }
@@ -68,23 +68,23 @@ const BreadCrumbs = props => {
                   {route}
                 </Route>
               </React.Fragment>
-            );
+            )
           } else {
             return (
-              <Route key={index} active={props.routes.length === 1}>
-                {route}
-              </Route>
-            );
+              <React.Fragment key={index}>
+                <Route active={props.routes.length === 1}>{route}</Route>
+              </React.Fragment>
+            )
           }
         })}
       </RoutesContainer>
     </BreadCrumbsContainer>
-  );
-};
+  )
+}
 
 BreadCrumbs.propTypes = {
   routes: PropTypes.arrayOf(PropTypes.string).isRequired,
-  className: PropTypes.string,
-};
+  className: PropTypes.string
+}
 
-export default BreadCrumbs;
+export default BreadCrumbs

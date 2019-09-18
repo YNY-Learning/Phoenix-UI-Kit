@@ -19,6 +19,8 @@ import {
   StarRating,
   Avatar,
   BreadCrumbs,
+  Input,
+  Toaster,
 } from 'phoenix-ui-kit';
 import 'phoenix-ui-kit/dist/index.min.css';
 
@@ -56,13 +58,20 @@ export default class App extends Component {
         <hr />
         <div className="hlist">
           <h4>Default</h4>
-          <Button primary>Primary</Button>
-          <Button secondary>Secondary</Button>
-          <Button tertiary>Tertiary</Button>
+          <Button onClick={e => console.log(e)} primary>
+            Primary
+          </Button>
+          <Button onClick={e => console.log(e)} secondary>
+            Secondary
+          </Button>
+          <Button onClick={e => console.log(e)} tertiary>
+            Tertiary
+          </Button>
         </div>
         <div className="hlist">
           <h4>with Icon</h4>
           <Button
+            onClick={e => console.log(e)}
             primary
             withIcon
             buttonIcon={<Bell color="#FFF" width="12px" height="12px" />}
@@ -70,6 +79,7 @@ export default class App extends Component {
             Action
           </Button>
           <Button
+            onClick={e => console.log(e)}
             secondary
             withIcon
             buttonIcon={<Bell color="#C1C1C1" width="12px" height="12px" />}
@@ -77,6 +87,7 @@ export default class App extends Component {
             Action
           </Button>
           <Button
+            onClick={e => console.log(e)}
             tertiary
             withIcon
             buttonIcon={<Bell color="#C1C1C1" width="12px" height="12px" />}
@@ -87,25 +98,25 @@ export default class App extends Component {
 
         <div className="hlist">
           <h4>Disabled</h4>
-          <Button primary disabled>
+          <Button onClick={e => console.log(e)} primary disabled>
             Primary
           </Button>
-          <Button secondary disabled>
+          <Button onClick={e => console.log(e)} secondary disabled>
             Secondary
           </Button>
-          <Button tertiary disabled>
+          <Button onClick={e => console.log(e)} tertiary disabled>
             Tertiary
           </Button>
         </div>
         <div className="hlist">
           <h4>Small</h4>
-          <Button primary small>
+          <Button onClick={e => console.log(e)} primary small>
             Primary
           </Button>
-          <Button secondary small>
+          <Button onClick={e => console.log(e)} secondary small>
             Secondary
           </Button>
-          <Button tertiary small>
+          <Button onClick={e => console.log(e)} tertiary small>
             Tertiary
           </Button>
         </div>
@@ -116,7 +127,7 @@ export default class App extends Component {
             {
               label: 'tab3',
               tabComponent: (
-                <Button primary small>
+                <Button onClick={e => console.log(e)} primary small>
                   Primary
                 </Button>
               ),
@@ -290,6 +301,67 @@ export default class App extends Component {
           <BreadCrumbs
             routes={['Dashboard', 'Level 2', 'Level 3', 'Level 4']}
           />
+        </div>
+        <div className="hlist">
+          <Input
+            name="input1"
+            onChange={e => console.log(e)}
+            onBlur={e => console.log('blur', e)}
+            placeholder="Input text"
+          />
+          <Input
+            name="input1"
+            onChange={e => console.log(e)}
+            onBlur={e => console.log('blur', e)}
+            placeholder="Input text"
+            disabled
+          />
+          <Input
+            name="input1"
+            onChange={e => console.log(e)}
+            onBlur={e => console.log('blur', e)}
+            placeholder="Input text"
+            inputState="success"
+          />
+          <Input
+            name="input1"
+            onChange={e => console.log(e)}
+            onBlur={e => console.log('blur', e)}
+            placeholder="Input text"
+            inputState="error"
+          />
+        </div>
+        <div className="hlist">
+          <div className="vlist">
+            <Toaster
+              type="info"
+              title="Information"
+              body="Tell me more about what happenned"
+            />
+            <Toaster
+              type="warning"
+              title="Warning"
+              body="Tell me more about what happenned"
+            />
+            <Toaster
+              type="success"
+              title="Success"
+              body="Tell me more about what happenned"
+            />
+            <Toaster
+              type="error"
+              title="Error"
+              body="Tell me more about what happenned"
+            />
+            <Toaster
+              type="info"
+              title="Information"
+              body="Tell me more about what happenned"
+              withAction
+              actionTitle="Got it"
+              action={e => console.log(e)}
+            />
+          </div>
         </div>
       </div>
     );
