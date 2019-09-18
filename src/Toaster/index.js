@@ -130,7 +130,7 @@ const Toaster = props => {
         <Body> {props.body} </Body>
       </Center>
       <Right>
-        <CloseContainer>
+        <CloseContainer onClick={props.closeAction}>
           <CloseFill />
         </CloseContainer>
       </Right>
@@ -152,7 +152,8 @@ Toaster.propTypes = {
   body: PropTypes.oneOfType([PropTypes.string, PropTypes.element]).isRequired,
   withAction: PropTypes.bool,
   actionTitle: PropTypes.string,
-  action: PropTypes.func
+  action: PropTypes.func,
+  closeAction: PropTypes.func
 }
 
 export default Toaster
