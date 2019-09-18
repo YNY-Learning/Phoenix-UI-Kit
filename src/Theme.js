@@ -4,6 +4,7 @@ const Theme = {
   primary1: '#5F6FEE',
   primary2: '#A6AEED',
   primary3: '#CACEED',
+  primary1Transparent: 'rgba(95,111,238,0.5)',
   primaryTransparent: 'rgba(202,206,237,0.5)',
   black: '#000',
   grey4: '#666B8C',
