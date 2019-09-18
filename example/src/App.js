@@ -334,26 +334,31 @@ export default class App extends Component {
         <div className="hlist">
           <div className="vlist">
             <Toaster
+              closeAction={e => console.log('close toaster')}
               type="info"
               title="Information"
               body="Tell me more about what happenned"
             />
             <Toaster
+              closeAction={e => console.log('close toaster')}
               type="warning"
               title="Warning"
               body="Tell me more about what happenned"
             />
             <Toaster
+              closeAction={e => console.log('close toaster')}
               type="success"
               title="Success"
               body="Tell me more about what happenned"
             />
             <Toaster
+              closeAction={e => console.log('close toaster')}
               type="error"
               title="Error"
               body="Tell me more about what happenned"
             />
             <Toaster
+              closeAction={e => console.log('close toaster')}
               type="info"
               title="Information"
               body="Tell me more about what happenned"
