@@ -24,7 +24,7 @@ export default {
     }
   ],
   plugins: [
-    css(),
+    css({ minified: true }),
     external(),
     postcss({
       modules: true
@@ -38,6 +38,6 @@ export default {
     resolve(),
     commonjs()
   ],
-  external: ['styled-components'],
+  external: ['styled-components', 'date-fns', 'rc-tooltip', 'react-datepicker'],
   globals: { 'styled-components': 'styled' }
 }

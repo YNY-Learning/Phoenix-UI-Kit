@@ -21,6 +21,8 @@ import {
   BreadCrumbs,
   Input,
   Toaster,
+  CalendarPicker,
+  Card,
 } from 'phoenix-ui-kit';
 import 'phoenix-ui-kit/dist/index.min.css';
 
@@ -29,12 +31,20 @@ export default class App extends Component {
     super(props);
     this.state = {
       checked: false,
+      startDate: new Date(),
     };
     this.onCheckToggle = this.onCheckToggle.bind(this);
+    this.onSelectDate = this.onSelectDate.bind(this);
   }
   onCheckToggle(e) {
     this.setState({
       checked: !this.state.checked,
+    });
+  }
+  onSelectDate(e) {
+    console.log(e.target.value);
+    this.setState({
+      startDate: e.target.value,
     });
   }
 
@@ -332,6 +342,13 @@ export default class App extends Component {
           />
         </div>
         <div className="hlist">
+          <CalendarPicker
+            onChange={this.onSelectDate}
+            value={this.state.startDate}
+            name="datepicker"
+          />
+        </div>
+        <div className="hlist">
           <div className="vlist">
             <Toaster
               closeAction={e => console.log('close toaster')}
@@ -365,6 +382,56 @@ export default class App extends Component {
               withAction
               actionTitle="Got it"
               action={e => console.log(e)}
+            />
+          </div>
+        </div>
+
+        <div className="hlist">
+          <div className="vlist">
+            <Card
+              selected
+              leftComponent={
+                <p>1</p>
+              }
+              centerComponent={
+                <p>2</p>
+              }
+              rightComponent={
+                <p>3</p>
+              }
+            />
+            <Card
+              leftComponent={
+                <div className="icon__container">
+                  <Bell color="#FFF" width="12px" height="12px" />
+                </div>
+              }
+              centerComponent={
+                <div>
+                  <Body>Introduce Yourself</Body>
+                  <Caption>Cours en visio</Caption>
+                </div>
+              }
+              rightComponent={
+                <CheckBox
+                  selected
+                  name="default"
+                  onChange={this.onCheckToggle}
+                />
+              }
+            />
+            <Card
+              leftComponent={
+                <Avatar
+                  src="https://images.unsplash.com/photo-1522075469751-3a6694fb2f61"
+                  alt="avatar photo"
+                  large
+                />
+              }
+              centerComponent={<Title>Presentation de projet</Title>}
+              rightComponent={
+                <Bell color="#C1C1C1" width="20px" height="20px" />
+              }
             />
           </div>
         </div>
