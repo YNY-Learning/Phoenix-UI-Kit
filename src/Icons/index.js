@@ -1,3 +1,8 @@
 export { default as Bell } from './Bell'
 export { default as InformationFill } from './InformationFill'
 export { default as NextChevron } from './NextChevron'
+export { default as LogoShort } from './LogoShort'
+export { default as HomeOutline } from './HomeOutline'
+export { default as LayersOutline } from './LayersOutline'
+export { default as PeopleOutline } from './PeopleOutline'
+export { default as DownChevron } from './DownChevron'

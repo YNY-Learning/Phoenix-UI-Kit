@@ -28,7 +28,24 @@ Body.defaultProps = {
   color: 'black'
 }
 Body.propTypes = {
-  weight: PropTypes.string,
-  color: PropTypes.string
+  weight: PropTypes.oneOf(['regular', 'semibold']),
+  color: PropTypes.oneOf([
+    'primary5',
+    'primary4',
+    'primary1',
+    'primary2',
+    'primary3',
+    'primary1Transparent',
+    'primaryTransparent',
+    'black',
+    'grey4',
+    'grey3',
+    'grey2',
+    'grey1',
+    'white',
+    'green1',
+    'yellow1',
+    'red1'
+  ])
 }
 export default Body

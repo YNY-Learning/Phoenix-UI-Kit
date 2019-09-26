@@ -32,7 +32,6 @@ const CardContainer = styled(({ className, children }) => (
     background: ${props => props.theme.primary1};
     border-top-left-radius: 4px;
     border-bottom-left-radius: 4px;
-    //border-left: solid 2px ${props => props.theme.primary1};
     transform: scaleY(1);
     transition: transform 350ms ease-in-out;
   }

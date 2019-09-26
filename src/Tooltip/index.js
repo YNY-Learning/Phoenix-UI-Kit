@@ -29,7 +29,7 @@ const ToolTip = props => {
       trigger={['hover']}
       overlay={<OverlayTooltip>{props.label}</OverlayTooltip>}
       arrowContent={<div style={{ display: 'none' }} />}
-      destroyTooltipOnHide
+      destroyTooltipOnHide={true}
       transitionName='rc-tooltip-zoom'
       mouseEnterDelay={0.35}
     >

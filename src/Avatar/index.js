@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import styled from 'styled-components'
 
 const StyledAvatar = styled(({ className, src, alt }) => (
-  <img className={className} src={src} alt={alt} />
+  <img importance='high' className={className} src={src} alt={alt} />
 ))`
   width: ${props => (props.small ? '24px' : '48px')};
   height: ${props => (props.small ? '24px' : '48px')};

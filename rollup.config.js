@@ -38,6 +38,13 @@ export default {
     resolve(),
     commonjs()
   ],
-  external: ['styled-components', 'date-fns', 'rc-tooltip', 'react-datepicker'],
+  external: [
+    'styled-components',
+    'date-fns',
+    'rc-tooltip',
+    'react-datepicker',
+    'react-autosuggest',
+    'autosuggest-highlight'
+  ],
   globals: { 'styled-components': 'styled' }
 }
