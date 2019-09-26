@@ -10,7 +10,10 @@ import {
   Button,
   Tabs,
   Bell,
+  HomeOutline,
+  LayersOutline,
   InformationFill,
+  PeopleOutline,
   CheckBox,
   Radio,
   ToolTip,
@@ -21,21 +24,77 @@ import {
   BreadCrumbs,
   Input,
   Toaster,
+  CalendarPicker,
+  Card,
+  Navbar,
+  LogoShort,
+  HeaderBar,
+  AutoSuggestion,
 } from 'phoenix-ui-kit';
 import 'phoenix-ui-kit/dist/index.min.css';
+
+const options = [
+  { value: 'advisor', label: 'Conseiller' },
+  { value: 'antiquarian', label: 'Antiquaire' },
+  { value: 'boilermaker', label: 'Chaudronnier' },
+  { value: 'dental_technician', label: 'Prothésiste Dentaire' },
+  { value: 'engineer', label: 'Ingénieur' },
+  { value: 'forest_ingineer', label: 'Ingénieur Forestier' },
+  { value: 'graphic_designer', label: 'Designer Graphique' },
+  { value: 'industrial_designer', label: 'Designer Industriel' },
+  { value: 'interior_designer', label: 'Architecte d interieur' },
+  { value: 'lawyer', label: 'Avocat' },
+  { value: 'logistician', label: 'Logisticien' },
+  { value: 'officer', label: 'Officier' },
+  { value: 'photographer', label: 'Photographe' },
+  { value: 'product_tourist', label: 'Chef de Projet secteur Touriste' },
+  { value: 'receptionist', label: 'Receptioniste' },
+  { value: 'school_teacher', label: 'Professeur des Ecoles' },
+  { value: 'warehouseman', label: 'Magasinier' },
+];
 
 export default class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
       checked: false,
+      startDate: new Date(),
+      showNavbar: false,
+      showHeader: false,
+      autoComplete: '',
     };
     this.onCheckToggle = this.onCheckToggle.bind(this);
+    this.onSelectDate = this.onSelectDate.bind(this);
+    this.toggleNavBar = this.toggleNavBar.bind(this);
+    this.toggleHeaderBar = this.toggleHeaderBar.bind(this);
+    this.onAutoCompleteChange = this.onAutoCompleteChange.bind(this);
   }
   onCheckToggle(e) {
     this.setState({
       checked: !this.state.checked,
     });
+  }
+  onSelectDate(e) {
+    console.log(e.target.value);
+    this.setState({
+      startDate: e.target.value,
+    });
+  }
+  toggleNavBar() {
+    this.setState({
+      showNavbar: !this.state.showNavbar,
+    });
+  }
+  toggleHeaderBar() {
+    this.setState({
+      showHeader: !this.state.showHeader,
+    });
+  }
+  onAutoCompleteChange(e){
+    console.log(e.target.value)
+    this.setState({
+      autoComplete: e.target.value
+    })
   }
 
   render() {
@@ -332,6 +391,13 @@ export default class App extends Component {
           />
         </div>
         <div className="hlist">
+          <CalendarPicker
+            onChange={this.onSelectDate}
+            value={this.state.startDate}
+            name="datepicker"
+          />
+        </div>
+        <div className="hlist">
           <div className="vlist">
             <Toaster
               closeAction={e => console.log('close toaster')}
@@ -368,6 +434,116 @@ export default class App extends Component {
             />
           </div>
         </div>
+
+        <div className="hlist">
+          <div className="vlist">
+            <Card
+              selected
+              leftComponent={<p>1</p>}
+              centerComponent={<p>2</p>}
+              rightComponent={<p>3</p>}
+            />
+            <Card
+              leftComponent={
+                <div className="icon__container">
+                  <Bell color="#FFF" width="12px" height="12px" />
+                </div>
+              }
+              centerComponent={
+                <div>
+                  <Body>Introduce Yourself</Body>
+                  <Caption>Cours en visio</Caption>
+                </div>
+              }
+              rightComponent={
+                <CheckBox
+                  selected
+                  name="default"
+                  onChange={this.onCheckToggle}
+                />
+              }
+            />
+            <Card
+              leftComponent={
+                <Avatar
+                  src="https://images.unsplash.com/photo-1522075469751-3a6694fb2f61"
+                  alt="avatar photo"
+                  large
+                />
+              }
+              centerComponent={<Title>Presentation de projet</Title>}
+              rightComponent={
+                <Bell color="#C1C1C1" width="20px" height="20px" />
+              }
+            />
+          </div>
+        </div>
+        <div className="hlist">
+          <AutoSuggestion
+            name="autoComplete"
+            onChange={this.onAutoCompleteChange}
+            placeholder="autoSuggestion"
+            autoComplete="text"
+            value={this.state.autoComplete}
+            options={options}
+          />
+        </div>
+        <div className="hlist">
+          <Button onClick={this.toggleNavBar} primary>
+            Show nav bar
+          </Button>
+          {this.state.showNavbar && (
+            <Navbar
+              dark
+              logo={<LogoShort />}
+              navItems={[
+                {
+                  link: '/#',
+                  logo: <HomeOutline color="#FFF" width="24px" height="24px" />,
+                  hasTooltip: true,
+                  toolTipLabel: 'Home',
+                },
+                {
+                  link: '/layers',
+                  logo: (
+                    <LayersOutline color="#FFF" width="24px" height="24px" />
+                  ),
+                  hasTooltip: true,
+                  toolTipLabel: 'layers',
+                },
+                {
+                  link: '/teachers',
+                  logo: (
+                    <PeopleOutline color="#FFF" width="24px" height="24px" />
+                  ),
+                  hasTooltip: true,
+                  toolTipLabel: 'teachers',
+                },
+              ]}
+            />
+          )}
+        </div>
+        <div className="hlist">
+          <Button onClick={this.toggleHeaderBar} primary>
+            Show Header Bar
+          </Button>
+          {this.state.showHeader && (
+            <HeaderBar
+              profile={{
+                imageURl:
+                  'https://images.unsplash.com/photo-1522075469751-3a6694fb2f61',
+                fullName: ' Alfredo Tinder',
+                onlineStatus: 'online',
+              }}
+              contentComponent={
+                <Title color="black" weight="semibold">
+                  Dashboard
+                </Title>
+              }
+            />
+          )}
+        </div>
+
       </div>
     );
   }
