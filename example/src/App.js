@@ -561,7 +561,7 @@ export default class App extends Component {
             currentTime={10}
             duration={45}
             IconComponent={
-              <Bell color="#9296B3" width="12px" height="12px" />
+              <Bell color="#9296B3" width="20px" height="20px" />
             }
           />
         </div>

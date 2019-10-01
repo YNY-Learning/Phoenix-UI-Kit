@@ -7,9 +7,8 @@ const TimerContainer = styled(({ className, children }) => (
   <div className={className}>{children}</div>
 ))`
   width: auto;
-  height: 21px;
-  max-height: 21px;
-  padding: 0.2rem;
+  height: 24px;
+  max-height: 24px;
   display: flex;
   flex-flow: row nowrap;
   justify-content: flex-start;
@@ -19,9 +18,19 @@ const TimerContainer = styled(({ className, children }) => (
 const IconContainer = styled.div`
   width: auto;
   margin-right: 8px;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  margin-top: auto;
+  margin-bottom: auto;
 `
 const Time = styled.div`
   margin-left: 8px;
+  font-size: 12px;
+  line-height: 18px;
+  font-weight: 400;
+  color: black;
 `
 
 const ProgressBar = props => {
