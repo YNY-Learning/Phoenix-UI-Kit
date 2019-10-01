@@ -9,6 +9,7 @@
   font-size: 14px;
   line-height: 21px;
   color: #666b8c;
+  width: 100%;
 }
 .vlist {
   padding-top: 1em;
@@ -21,7 +22,7 @@
   font-size: 14px;
   line-height: 21px;
   color: #666b8c;
-  width: 90%;
+  width: 100%;
 }
 .icon__container {
   width: 32px;
