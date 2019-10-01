@@ -45,7 +45,8 @@ export default {
     'react-datepicker',
     'react-autosuggest',
     'autosuggest-highlight',
-    'react-select'
+    'react-select',
+    'rc-progress'
   ],
   globals: { 'styled-components': 'styled' }
 }

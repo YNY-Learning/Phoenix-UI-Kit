@@ -31,6 +31,7 @@ import {
   HeaderBar,
   AutoSuggestion,
   Dropdown,
+  ProgressBar,
 } from 'phoenix-ui-kit';
 import 'phoenix-ui-kit/dist/index.min.css';
 
@@ -553,6 +554,15 @@ export default class App extends Component {
             value={this.state.autoComplete}
             options={options}
             onBlur={e => console.log('blur', e)}
+          />
+        </div>
+        <div className="hlist">
+          <ProgressBar
+            currentTime={10}
+            duration={45}
+            IconComponent={
+              <Bell color="#9296B3" width="12px" height="12px" />
+            }
           />
         </div>
       </div>
