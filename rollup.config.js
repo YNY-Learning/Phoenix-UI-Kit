@@ -44,7 +44,9 @@ export default {
     'rc-tooltip',
     'react-datepicker',
     'react-autosuggest',
-    'autosuggest-highlight'
+    'autosuggest-highlight',
+    'react-select',
+    'rc-progress'
   ],
   globals: { 'styled-components': 'styled' }
 }

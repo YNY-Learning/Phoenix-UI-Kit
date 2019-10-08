@@ -30,6 +30,8 @@ import {
   LogoShort,
   HeaderBar,
   AutoSuggestion,
+  Dropdown,
+  ProgressBar,
 } from 'phoenix-ui-kit';
 import 'phoenix-ui-kit/dist/index.min.css';
 
@@ -90,11 +92,10 @@ export default class App extends Component {
       showHeader: !this.state.showHeader,
     });
   }
-  onAutoCompleteChange(e){
-    console.log(e.target.value)
+  onAutoCompleteChange(e) {
     this.setState({
-      autoComplete: e.target.value
-    })
+      autoComplete: e.target.value,
+    });
   }
 
   render() {
@@ -544,6 +545,26 @@ export default class App extends Component {
           )}
         </div>
 
+        <div className="hlist">
+          <Dropdown
+            name="dropDown"
+            onChange={this.onAutoCompleteChange}
+            placeholder="Dropdown"
+            autoComplete="text"
+            value={this.state.autoComplete}
+            options={options}
+            onBlur={e => console.log('blur', e)}
+          />
+        </div>
+        <div className="hlist">
+          <ProgressBar
+            currentTime={10}
+            duration={45}
+            IconComponent={
+              <Bell color="#9296B3" width="20px" height="20px" />
+            }
+          />
+        </div>
       </div>
     );
   }

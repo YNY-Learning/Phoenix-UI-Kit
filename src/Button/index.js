@@ -1,7 +1,7 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import styled, { css } from 'styled-components';
-import Theme from '../Theme';
+import React from 'react'
+import PropTypes from 'prop-types'
+import styled, { css } from 'styled-components'
+import Theme from '../Theme'
 
 const ButtonStyled = styled(({ className, children, onClick }) => (
   <button className={className} onClick={onClick}>
@@ -28,21 +28,22 @@ const ButtonStyled = styled(({ className, children, onClick }) => (
         box-shadow: 0px 2px 10px 0px rgba(0, 0, 0, 0.1);
         border: none;
         ${({ disabled }) =>
-          disabled
-            ? css`
+    disabled
+      ? css`
                 background: ${props => props.theme.grey3};
                 color: ${props => props.theme.white};
                 cursor: not-allowed;
               `
-            : css`
+      : css`
                 &:hover {
                   background: ${props => props.theme.primary4};
                 }
                 &:focus {
                   background: ${props => props.theme.primary5};
+                  box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.1);
                 }
               `}
-      `;
+      `
     }
     if (props.secondary) {
       return css`
@@ -51,21 +52,22 @@ const ButtonStyled = styled(({ className, children, onClick }) => (
         box-shadow: 0px 2px 10px 0px rgba(0, 0, 0, 0.1);
         border: 1px solid ${props => props.theme.grey2};
         ${({ disabled }) =>
-          disabled
-            ? css`
+    disabled
+      ? css`
                 background: ${props => props.theme.grey2};
                 color: ${props => props.theme.grey3};
                 cursor: not-allowed;
               `
-            : css`
+      : css`
                 &:hover {
                   background: ${props => props.theme.grey1};
                 }
                 &:focus {
                   background: ${props => props.theme.grey2};
+                  box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.1);
                 }
               `}
-      `;
+      `
     }
     if (props.tertiary) {
       return css`
@@ -74,13 +76,13 @@ const ButtonStyled = styled(({ className, children, onClick }) => (
         box-shadow: none;
         border: none;
         ${({ disabled }) =>
-          disabled
-            ? css`
+    disabled
+      ? css`
                 background: ${props => props.theme.white};
                 color: ${props => props.theme.grey3};
                 cursor: not-allowed;
               `
-            : css`
+      : css`
                 &:hover {
                   background: ${props => props.theme.grey1};
                 }
@@ -88,14 +90,14 @@ const ButtonStyled = styled(({ className, children, onClick }) => (
                   background: ${props => props.theme.grey2};
                 }
               `}
-      `;
+      `
     } else {
       return css`
         color: ${props => props.theme.white};
         background: ${props => props.theme.primary1};
         box-shadow: 0px 2px 10px 0px rgba(0, 0, 0, 0.1);
         border: none;
-      `;
+      `
     }
   }}
   ${({ small }) =>
@@ -106,24 +108,24 @@ const ButtonStyled = styled(({ className, children, onClick }) => (
       : css`
           padding: 8px 16px;
         `}
-`;
+`
 ButtonStyled.defaultProps = {
-  theme: Theme,
-};
+  theme: Theme
+}
 const IconContainer = styled.div`
   display: flex;
   flex-flow: column nowrap;
   justify-content: center;
   align-items: center;
   margin-right: 8px;
-`;
+`
 const TextContainer = styled.div`
   font-size: 14px;
   font-weight: 400;
   line-height: 21px;
   color: inherit;
   background: transparent;
-`;
+`
 
 function Button(props) {
   if (props.withIcon) {
@@ -133,9 +135,9 @@ function Button(props) {
         <IconContainer>{props.buttonIcon}</IconContainer>
         <TextContainer>{props.children}</TextContainer>{' '}
       </ButtonStyled>
-    );
+    )
   }
-  return <ButtonStyled {...props}> {props.children} </ButtonStyled>;
+  return <ButtonStyled {...props}> {props.children} </ButtonStyled>
 }
 Button.propTypes = {
   disabled: PropTypes.bool,
@@ -149,9 +151,9 @@ Button.propTypes = {
   children: PropTypes.oneOfType([
     PropTypes.arrayOf(PropTypes.node),
     PropTypes.node,
-    PropTypes.element,
+    PropTypes.element
   ]).isRequired,
-  onClick: PropTypes.func.isRequired,
-};
+  onClick: PropTypes.func.isRequired
+}
 
-export default Button;
+export default Button
