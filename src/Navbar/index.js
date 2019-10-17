@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import styled, { css } from 'styled-components'
 import Theme from '../Theme'
-import { ToolTip } from '../index'
+import ToolTip from '../Tooltip'
 
 const NavbarContainer = styled(({ className, children }) => (
   <div className={className}> {children} </div>
